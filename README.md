@@ -1,2 +1,6 @@
 # JaeukYang
-server 1st seminar
+
+> server assignment repo
+
+ - 1st seminar
+  - javascript basic & git
