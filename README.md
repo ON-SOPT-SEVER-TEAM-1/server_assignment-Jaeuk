@@ -1,4 +1,4 @@
-# JaeukYang
+# Jaeuk Yang
 
 > server assignment repo
 
