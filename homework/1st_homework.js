@@ -280,7 +280,7 @@ let team2 = [];
 let team3 = [];
 let team4 = [];
 let team5 = [];
-let team6 = [];
+
 let yb = [];
 let ob = [];
 
@@ -331,30 +331,60 @@ shuffle(ob);
 
 for(var i = 0;  i < ob.length; i++){
     if(i>=0 && i<3){
-        team1.push(yb[i]);
         team1.push(ob[i]);
     } else if(i>=3 && i<6){
-        team2.push(yb[i]);
         team2.push(ob[i]);
     } else if(i>=6 && i<9){
-        team3.push(yb[i]);
         team3.push(ob[i]);
     } else if(i>=9 && i<12){
-        team4.push(yb[i]);
         team4.push(ob[i]);
     } else{
-        team5.push(yb[i]);
         team5.push(ob[i]);
     }
 }
 
-console.log(yb.length, ob.length)
+for(var i = 0; i < yb.length; i++){
+    if(i>=0 && i<4){
+        team1.push(yb[i]);
+    } else if(i>=4 && i<8){
+        team2.push(yb[i]);
+    } else if(i>=8 && i<12){
+        team3.push(yb[i]);
+    } else if(i>=12 && i<16){
+        team4.push(yb[i]);
+    } else{
+        team5.push(yb[i]);
+    }
+}
 
+console.log('========================');
 team1.forEach(
     element => {
-        console.log(element.name, element.status);
+        console.log('team1: ' + element.name, element.status);
     }
 )
-// while(yb){
-//     team1.push(yb[0], yb[1], yb[2], ob[1], ob[2], ob[3])
-// }
+console.log('========================');
+team2.forEach(
+    element => {
+        console.log('team2: ' + element.name, element.status);
+    }
+)
+console.log('========================');
+team3.forEach(
+    element => {
+        console.log('team3: ' + element.name, element.status);
+    }
+)
+console.log('========================');
+team4.forEach(
+    element => {
+        console.log('team4: ' + element.name, element.status);
+    }
+)
+console.log('========================');
+team5.forEach(
+    element => {
+        console.log('team5: ' + element.name, element.status);
+    }
+)
+console.log('========================');
