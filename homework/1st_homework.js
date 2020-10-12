@@ -1,4 +1,5 @@
 // level 2
+console.log('*****Level 2*****');
 const myTeam = [
     {
         name: '양재욱',
@@ -13,7 +14,7 @@ const myTeam = [
         name: '신지혜',
         live: '쌍문동',
         age: 23,
-        hobby: '독서',
+        hobby: '산책',
         getInfo: function(){
             console.log(`이름: ${this.name}, 거주지: ${this.live}, 나이: ${this.age}, 취미: ${this.hobby}`);
         }        
@@ -40,7 +41,7 @@ const myTeam = [
         name: '이현주',
         live: '숙대입구',
         age: 24,
-        hobby: '솝트',
+        hobby: '넷플릭스',
         getInfo: function(){
             console.log(`이름: ${this.name}, 거주지: ${this.live}, 나이: ${this.age}, 취미: ${this.hobby}`);
         }
@@ -54,226 +55,8 @@ myTeam.forEach(
 )
 
 // level 3
-let member = [
-    {
-        "name": "최정재",
-        "part": "Server",
-        "status": "OB",
-        "gender": "남"
-    },
-    {
-        "name": "박경선",
-        "part": "Server",
-        "status": "OB",
-        "gender": "여"
-    },
-    {
-        "name": "신연상",
-        "part": "Server",
-        "status": "OB",
-        "gender": "남"
-    },
-    {
-        "name": "정효원",
-        "part": "Server",
-        "status": "OB",
-        "gender": "여"
-    },
-    {
-        "name": "류세화",
-        "part": "Server",
-        "status": "OB",
-        "gender": "여"
-    },
-    {
-        "name": "이가영",
-        "part": "Server",
-        "status": "OB",
-        "gender": "여"
-    },
-    {
-        "name": "이영현",
-        "part": "Server",
-        "status": "OB",
-        "gender": "여"
-    },
-    {
-        "name": "남궁찬",
-        "part": "Server",
-        "status": "OB",
-        "gender": "남"
-    },
-    {
-        "name": "김민주",
-        "part": "Server",
-        "status": "OB",
-        "gender": "여"
-    },
-    {
-        "name": "최정훈",
-        "part": "Server",
-        "status": "OB",
-        "gender": "여"
-    },
-    {
-        "name": "박주은",
-        "part": "Server",
-        "status": "OB",
-        "gender": "여"
-    },
-    {
-        "name": "이현준",
-        "part": "Server",
-        "status": "OB",
-        "gender": "여"
-    },
-    {
-        "name": "김수민",
-        "part": "Server",
-        "status": "OB",
-        "gender": "여"
-    },
-    {
-        "name": "김현상",
-        "part": "Server",
-        "status": "OB",
-        "gender": "여"
-    },
-    {
-        "name": "김채림",
-        "part": "Server",
-        "status": "OB",
-        "gender": "여"
-    },
-    {
-        "name": "이현상",
-        "part": "Server",
-        "status": "YB",
-        "gender": "남"
-    },
-    {
-        "name": "홍혜진",
-        "part": "Server",
-        "status": "YB",
-        "gender": "여"
-    },
-    {
-        "name": "오승준",
-        "part": "Server",
-        "status": "YB",
-        "gender": "남"
-    },
-    {
-        "name": "양재욱",
-        "part": "Server",
-        "status": "YB",
-        "gender": "남"
-    },
-    {
-        "name": "최선준",
-        "part": "Server",
-        "status": "YB",
-        "gender": "남"
-    },
-    {
-        "name": "박상수",
-        "part": "Server",
-        "status": "YB",
-        "gender": "남"
-    },
-    {
-        "name": "임찬기",
-        "part": "Server",
-        "status": "YB",
-        "gender": "남"
-    },
-    {
-        "name": "박진호",
-        "part": "Server",
-        "status": "YB",
-        "gender": "남"
-    },
-    {
-        "name": "신지한",
-        "part": "Server",
-        "status": "YB",
-        "gender": "여"
-    },
-    {
-        "name": "김영은",
-        "part": "Server",
-        "status": "YB",
-        "gender": "여"
-    },
-    {
-        "name": "송정훈",
-        "part": "Server",
-        "status": "YB",
-        "gender": "남"
-    },
-    {
-        "name": "강준수",
-        "part": "Server",
-        "status": "YB",
-        "gender": "남"
-    },
-    {
-        "name": "김중현",
-        "part": "Server",
-        "status": "YB",
-        "gender": "여"
-    },
-    {
-        "name": "김기찬",
-        "part": "Server",
-        "status": "YB",
-        "gender": "남"
-    },
-    {
-        "name": "김우영",
-        "part": "Server",
-        "status": "YB",
-        "gender": "남"
-    },
-    {
-        "name": "윤가인",
-        "part": "Server",
-        "status": "YB",
-        "gender": "여"
-    },
-    {
-        "name": "이예진",
-        "part": "Server",
-        "status": "YB",
-        "gender": "여"
-    },
-    {
-        "name": "박수진",
-        "part": "Server",
-        "status": "YB",
-        "gender": "여"
-    },
-    {
-        "name": "최다슬",
-        "part": "Server",
-        "status": "YB",
-        "gender": "여"
-    },
-    {
-        "name": "한승아",
-        "part": "Server",
-        "status": "YB",
-        "gender": "여"
-    },
-    {
-        "name": "김재은",
-        "part": "Server",
-        "status": "YB",
-        "gender": "여"
-    }
-]
-
-console.log(member.length);
+console.log('\n*****Level 3*****');
+const member = require('./member');
 
 let team1 = [];
 let team2 = [];
@@ -284,12 +67,7 @@ let team5 = [];
 let yb = [];
 let ob = [];
 
-// let randomNum = () => {
-//     return Math.floor(Math.random() * member.length);
-// }
-
-
-let ybob = () => {
+let splitYBOB = () => {
     for(var i = 0; i < member.length; i++){
         let m = member[i];
         if(m.status === 'YB'){
@@ -300,19 +78,7 @@ let ybob = () => {
     }
 }
 
-ybob();
-
-yb.forEach(
-    element => {
-        console.log('yb: ' + element.name)
-    }
-)
-
-ob.forEach(
-    element => {
-        console.log('ob: ' + element.name)
-    }
-)
+splitYBOB();
 
 function shuffle(a) {
     var j, x, i;
@@ -324,7 +90,6 @@ function shuffle(a) {
     }
     return a;
 }
-
 
 shuffle(yb);
 shuffle(ob);
