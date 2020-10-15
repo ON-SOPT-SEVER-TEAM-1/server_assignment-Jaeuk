@@ -6,7 +6,7 @@ const myTeam = [
         live: '잠원동',
         age: 25,
         hobby: '컴퓨터 게임',
-        getInfo: function(){
+        getInfo: function () {
             console.log(`이름: ${this.name}, 거주지: ${this.live}, 나이: ${this.age}, 취미: ${this.hobby}`);
         }
     },
@@ -15,16 +15,16 @@ const myTeam = [
         live: '쌍문동',
         age: 23,
         hobby: '산책',
-        getInfo: function(){
+        getInfo: function () {
             console.log(`이름: ${this.name}, 거주지: ${this.live}, 나이: ${this.age}, 취미: ${this.hobby}`);
-        }        
+        }
     },
     {
         name: '이수진',
         live: '일산',
         age: 23,
         hobby: '만보걷기',
-        getInfo: function(){
+        getInfo: function () {
             console.log(`이름: ${this.name}, 거주지: ${this.live}, 나이: ${this.age}, 취미: ${this.hobby}`);
         }
     },
@@ -33,7 +33,7 @@ const myTeam = [
         live: '숭실대입구',
         age: 23,
         hobby: '노래하기',
-        getInfo: function(){
+        getInfo: function () {
             console.log(`이름: ${this.name}, 거주지: ${this.live}, 나이: ${this.age}, 취미: ${this.hobby}`);
         }
     },
@@ -42,7 +42,7 @@ const myTeam = [
         live: '숙대입구',
         age: 24,
         hobby: '넷플릭스',
-        getInfo: function(){
+        getInfo: function () {
             console.log(`이름: ${this.name}, 거주지: ${this.live}, 나이: ${this.age}, 취미: ${this.hobby}`);
         }
     }
@@ -68,9 +68,9 @@ let yb = [];
 let ob = [];
 
 let splitYBOB = () => {
-    for(var i = 0; i < member.length; i++){
+    for (var i = 0; i < member.length; i++) {
         let m = member[i];
-        if(m.status === 'YB'){
+        if (m.status === 'YB') {
             yb.push(m);
         } else {
             ob.push(m);
@@ -94,30 +94,30 @@ function shuffle(a) {
 shuffle(yb);
 shuffle(ob);
 
-for(var i = 0;  i < ob.length; i++){
-    if(i>=0 && i<3){
+for (var i = 0; i < ob.length; i++) {
+    if (i >= 0 && i < 3) {
         team1.push(ob[i]);
-    } else if(i>=3 && i<6){
+    } else if (i >= 3 && i < 6) {
         team2.push(ob[i]);
-    } else if(i>=6 && i<9){
+    } else if (i >= 6 && i < 9) {
         team3.push(ob[i]);
-    } else if(i>=9 && i<12){
+    } else if (i >= 9 && i < 12) {
         team4.push(ob[i]);
-    } else{
+    } else {
         team5.push(ob[i]);
     }
 }
 
-for(var i = 0; i < yb.length; i++){
-    if(i>=0 && i<4){
+for (var i = 0; i < yb.length; i++) {
+    if (i >= 0 && i < 4) {
         team1.push(yb[i]);
-    } else if(i>=4 && i<8){
+    } else if (i >= 4 && i < 8) {
         team2.push(yb[i]);
-    } else if(i>=8 && i<12){
+    } else if (i >= 8 && i < 12) {
         team3.push(yb[i]);
-    } else if(i>=12 && i<16){
+    } else if (i >= 12 && i < 16) {
         team4.push(yb[i]);
-    } else{
+    } else {
         team5.push(yb[i]);
     }
 }
