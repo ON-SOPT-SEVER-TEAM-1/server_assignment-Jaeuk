@@ -21,3 +21,5 @@ Node.js가 Spring 보다 성능상 우위에 있다고 말하기 위해선 전�
 - 단순한 CPU 작업만을 진행한다.
 
 > Note: 위와 같은 전제조건은 전형적인 '웹 애플리케이션의 특징' 입니다.
+
+[출처 : https://siyoon210.tistory.com/164](https://siyoon210.tistory.com/164)
