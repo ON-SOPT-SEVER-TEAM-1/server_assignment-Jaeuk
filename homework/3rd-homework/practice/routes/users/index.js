@@ -9,7 +9,7 @@ let usersDB = require('../../modules/users');
 const encrypt = (salt, password) => {
     return new Promise( (resolve, reject) => {
         crypto.pbkdf2(password, salt.toString(), 1, 32, 'sha512', (err, derivedKey) => {
-            if(err) reject(err);
+            if(err) throw err;
             const digest = derivedKey.toString('hex');
             resolve(digest);
         })
