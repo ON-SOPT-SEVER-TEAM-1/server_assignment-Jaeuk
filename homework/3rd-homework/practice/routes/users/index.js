@@ -6,14 +6,39 @@ const responseMessage = require('../../modules/responseMessage');
 const statusCode = require('../../modules/statusCode');
 let usersDB = require('../../modules/users');
 
+const encrypt = (salt, password) => {
+    return new Promise( (resolve, reject) => {
+        crypto.pbkdf2(password, salt.toString(), 1, 32, 'sha512', (err, derivedKey) => {
+            if(err) throw err;
+            const digest = derivedKey.toString('hex');
+            resolve(digest);
+        })
+    })
+}
+
 router.post('/signup', (req, res) => {
 const {id, password} = req.body; // 1. req.body에서 데이터 가져오기
 //2. request data 확인하기, id 또는 password data가 없다면 NullValue 반환
+if(!id || !password){
+    res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.NULL_VALUE));
+}
 //3. 존재하는 아이디인지 확인하기. 이미 존재하는 아이디면 ALREADY ID 반환
+const isUser = usersDB.filter(id => id === this.id);
+if(isUser){
+    res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.ALREADY_ID));
+}
 //4. salt 생성
+const salt = crypto.randomBytes(32).toString('hex');
 //5. 2차 세미나때 배웠던 pbkdf2 방식으로 (비밀번호 + salt) 해싱하여 => 암호화된 password 를 만들기!
+const digest = await encrypt(salt, password);
 //6. usersDB에 id, 암호화된 password, salt 저장!
+try {
+    usersDB.push(id, digest, salt);
+} catch(err){
+    throw new Error('usersDB push err');
+}
 //7. status: 200 message: SING_UP_SUCCESS, data: id만 반환! (비밀번호, salt 반환 금지!!)
+res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.SIGN_UP_SUCCESS, id))
 });
 
 router.post('/signin', (req, res) => {
