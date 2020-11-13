@@ -131,7 +131,6 @@ router.delete('/:id', async (req, res) => {
     try{
         
         const user = await User.destroy({
-            attributes: ['id', 'name', 'email'],
             where: {
                 id: id
             }
@@ -139,6 +138,22 @@ router.delete('/:id', async (req, res) => {
         return res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.MEMBER_DELETE_SUCCESS, user));
     } catch(error){
         console.error('user delete error');
+    }
+})
+
+router.put('/:id', async (req, res) => {
+    const { id } = req.params;
+    const { email, userName } = req.body;
+
+    try{
+        const user = await User.update({email: email, userName: userName}, {
+            where: {
+                id: id
+            }
+        });
+        return res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.MEMBER_UPDATE_SUCCESS, user));
+    } catch(error){
+        console.error('user put error');
     }
 })
 
