@@ -4,9 +4,7 @@ const router = express.Router();
 const util = require('../../modules/util');
 const responseMessage = require('../../modules/responseMessage');
 const statusCode = require('../../modules/statusCode');
-const {
-    User
-} = require('../../models');
+const { User } = require('../../models');
 
 router.post('/signup', async (req, res) => {
     const {
@@ -93,8 +91,16 @@ router.post('/signin', async (req, res) => {
 })
 
 router.get('/', async (req, res) => {
-    //1. 모든 사용자 정보 (id, email, userName ) 리스폰스!
+    //1. 모든 사용자 정보 (id, email, userName) 리스폰스!
     // status: 200, message: READ_USER_ALL_SUCCESS, data: id, email, userName 반환
+    try {
+        const allUser = await User.findAll({
+            attributes: ['id', 'email', 'userName']
+        });
+        return res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.READ_USER_ALL_SUCCESS, allUser))
+    } catch(error){
+        console.log("read all error");
+    }
 })
 
 router.get('/:id', async (req, res) => {
