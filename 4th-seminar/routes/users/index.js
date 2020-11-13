@@ -47,7 +47,7 @@ router.post('/signup', async (req, res) => {
         console.log(error);
         return res.status(statusCode.INTERNAL_SERVER_ERROR).send(util.fail(statusCode.INTERNAL_SERVER_ERROR, responseMessage.SIGN_UP_FAIL));
     }
-})
+});
 
 router.post('/signin', async (req, res) => {
     const {
@@ -88,7 +88,7 @@ router.post('/signin', async (req, res) => {
         console.log(error);
         return res.status(statusCode.INTERNAL_SERVER_ERROR).send(util.fail(statusCode.INTERNAL_SERVER_ERROR, responseMessage.SIGN_IN_FAIL));
     }
-})
+});
 
 router.get('/', async (req, res) => {
     //1. 모든 사용자 정보 (id, email, userName) 리스폰스!
@@ -101,12 +101,45 @@ router.get('/', async (req, res) => {
     } catch(error){
         console.log("read all error");
     }
-})
+});
 
 router.get('/:id', async (req, res) => {
     //1. parameter로 id값을 받아온다! (id값은 인덱스값)
-    //2. id값이 유효한지 체크! 존재하지 않는 아이디면 NO_USER 반환
-    //3. status:200 message: READ_USER_SUCCESS, id, email, userName 반환
+    const { id } = req.params;
+    try {
+        //2. id값이 유효한지 체크! 존재하지 않는 아이디면 NO_USER 반환
+        const user = await User.findOne({
+            attributes: ['id', 'email', 'userName'],
+            where: {
+                id: id,
+            }
+        });
+        //3. status:200 message: READ_USER_SUCCESS, id, email, userName 반환
+        if (!user){
+            return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.NO_USER));
+        } else {
+            return res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.READ_USER_SUCCESS, user));
+        }
+    } catch(error){
+        console.error('/:id API ERROR');
+    }
+});
+
+router.delete('/:id', async (req, res) => {
+    const { id } = req.params;
+    // id 값 로우 전체 삭제
+    try{
+        
+        const user = await User.destroy({
+            attributes: ['id', 'name', 'email'],
+            where: {
+                id: id
+            }
+        });
+        return res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.MEMBER_DELETE_SUCCESS, user));
+    } catch(error){
+        console.error('user delete error');
+    }
 })
 
 module.exports = router;
