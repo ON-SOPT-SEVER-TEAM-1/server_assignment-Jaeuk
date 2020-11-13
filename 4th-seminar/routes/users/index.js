@@ -143,7 +143,6 @@ router.delete('/:id', async (req, res) => {
 router.put('/:id', async (req, res) => {
     const { id } = req.params;
     const { email, userName } = req.body;
-
     try{
         const user = await User.update({email: email, userName: userName}, {
             where: {
