@@ -129,7 +129,6 @@ router.delete('/:id', async (req, res) => {
     const { id } = req.params;
     // id 값 로우 전체 삭제
     try{
-        
         const user = await User.destroy({
             where: {
                 id: id
