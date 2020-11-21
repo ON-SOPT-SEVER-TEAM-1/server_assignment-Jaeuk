@@ -24,6 +24,10 @@ module.exports = {
   READ_USER_FAIL: "사용자 조회 성공",
   READ_USER_ALL_FAIL: "전체 사용자 조회 실패",
 
+  /** Post */
+  CREATE_POST_SUCCESS: "포스트 생성 성공",
+  CREATE_POST_FAIL: "포스트 생성 실패",
+
   /* 서버에러 */
   INTERNAL_SERVER_ERROR: "서버 내부 오류",
 }
